@@ -21,13 +21,13 @@ class OnBoardingScreen extends StatefulWidget {
 class _OnBoardingScreenState extends State<OnBoardingScreen> {
   PageController _controller = PageController(initialPage: 0);
   int currentPage = 0;
-  late Timer _timer;
+  //late Timer _timer;
 
   @override
   void initState() {
     super.initState();
 
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
       if (currentPage == 2) {
         _controller.jumpToPage(0);
       } else {
