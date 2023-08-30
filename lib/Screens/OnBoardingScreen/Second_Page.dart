@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sports_app/Shared/Colors.dart';
+import 'package:sports_app/Shared/Fonts.dart';
 
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(40.0),
@@ -22,19 +23,20 @@ class SecondPage extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Lottie.asset('assets/animation_llwv7ick.json'),
+                  Lottie.asset('assets/animation_llwv7ick.json',
+                      width: MediaQuery.of(context).size.width * 0.70,
+                      height: MediaQuery.of(context).size.height * 0.25),
                   // Image(
                   //     image: AssetImage('assets/image1-removebg-preview.png')),
                   SizedBox(
-                    height: 40,
+                    height: 15,
                   ),
                   Text(
                     'In our app you can',
                     style: GoogleFonts.saira(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
+                        fontSize: AppFonts.fontsize24,
+                        fontWeight: AppFonts.fontWeight700,
                         color: AppColors.textcolor),
                   ),
                   Padding(
@@ -44,6 +46,9 @@ class SecondPage extends StatelessWidget {
                       style: GoogleFonts.saira(color: AppColors.textcolor),
                       textAlign: TextAlign.center,
                     ),
+                  ),
+                  SizedBox(
+                    height: 15,
                   )
                 ],
               ),
