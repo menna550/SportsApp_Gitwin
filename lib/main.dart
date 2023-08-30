@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
           Image.asset('images/R.png'),
           duration: 2000,
           splashTransition: SplashTransition.rotationTransition,
-          backgroundColor: Color(0xFF181829),
+          backgroundColor: Color.fromARGB(255, 30, 30, 55),
           nextScreen: MyHomePage(title: 'GFG'),
         ));
 
