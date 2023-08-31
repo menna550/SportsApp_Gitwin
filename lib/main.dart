@@ -1,5 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:splash_screen/Screens/home.dart';
 import 'package:splash_screen/Screens/splash_screen.dart';
 
@@ -36,18 +37,37 @@ class MyApp extends StatelessWidget {
         ),
         home: AnimatedSplashScreen(
           splash:
-          // Text(
-          //   "Sports App",
-          //   style: TextStyle(
-          //       fontSize: 24,
-          //       fontWeight: FontWeight.bold,
-          //       color: Colors.redAccent),
-          // ),
-          Image.asset('images/R.png'),
-          duration: 2000,
-          splashTransition: SplashTransition.rotationTransition,
+              // Icons.sports_football,
+              // Text(
+              //   "Sports App",
+              //   style: TextStyle(
+              //       fontSize: 24,
+              //       fontWeight: FontWeight.bold,
+              //       color: Colors.redAccent),
+              // ),
+              // Image.asset('images/R.png'),
+              // duration: 2000,
+              // splashTransition: SplashTransition.rotationTransition,
+              // backgroundColor: Color.fromARGB(255, 30, 30, 55),
+              //nextScreen: MyHomePage(title: 'GFG'),
+              Column(
+            children: [
+              Image.asset('images/R.png',height: MediaQuery.of(context).size.height*.2,width: MediaQuery.of(context).size.width*.2),
+              const Text(
+                "Sports app",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+
+            ],
+          ),
           backgroundColor: Color.fromARGB(255, 30, 30, 55),
           nextScreen: MyHomePage(title: 'GFG'),
+          splashIconSize: 250,
+          duration: 3000,
+          splashTransition: SplashTransition.fadeTransition,
         ));
 
     // Center(
