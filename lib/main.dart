@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sports_app/Data/Cubits/Countries_cubit/countries_cubit.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
 
 import 'package:sports_app/Screens/OnBoardingScreen/On_Boarding_Screen.dart';
@@ -29,14 +31,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Sports App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CountriesCubit>(
+      create: (BuildContext context) => CountriesCubit(),
+    ),
+
+
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Sports App',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: OnBoardingScreen(),
       ),
-      home: OnBoardingScreen(),
     );
     // if (!_onboardingShown) {
     //   // Show the onboarding screen.s
