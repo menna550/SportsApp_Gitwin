@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:splash_screen/Screens/home.dart';
 import 'package:splash_screen/Screens/splash_screen.dart';
+import 'package:page_transition/page_transition.dart';
 
 void main() {
   runApp(const MyApp());
@@ -70,6 +71,7 @@ class MyApp extends StatelessWidget {
           splashIconSize: 250,
           duration: 3000,
           splashTransition: SplashTransition.fadeTransition,
+          pageTransitionType: PageTransitionType.fade,
         ));
 
     // Center(
