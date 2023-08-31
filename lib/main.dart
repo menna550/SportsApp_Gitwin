@@ -52,12 +52,13 @@ class MyApp extends StatelessWidget {
               //nextScreen: MyHomePage(title: 'GFG'),
               Column(
             children: [
-              SizedBox(height: 20),
-              Image.asset('images/sports.png',height: MediaQuery.of(context).size.height*.3,width: MediaQuery.of(context).size.width*.3),
+              SizedBox(height: 14),
+              Image.asset('assets/images/sportsl.png',height: MediaQuery.of(context).size.height*.23,width: MediaQuery.of(context).size.width*.23),
+              SizedBox(height: 25),
               const Text(
                 "Sports app",
                 style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
