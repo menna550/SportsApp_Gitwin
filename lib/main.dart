@@ -52,7 +52,8 @@ class MyApp extends StatelessWidget {
               //nextScreen: MyHomePage(title: 'GFG'),
               Column(
             children: [
-              Image.asset('images/R.png',height: MediaQuery.of(context).size.height*.2,width: MediaQuery.of(context).size.width*.2),
+              SizedBox(height: 20),
+              Image.asset('images/sports.png',height: MediaQuery.of(context).size.height*.3,width: MediaQuery.of(context).size.width*.3),
               const Text(
                 "Sports app",
                 style: TextStyle(

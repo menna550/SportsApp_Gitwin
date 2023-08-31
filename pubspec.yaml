@@ -67,6 +67,8 @@ flutter:
     - images/ball.png
     - images/ballv.png
     - images/ball.json
+    - images/sports.png
+    - images/sportsv.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
