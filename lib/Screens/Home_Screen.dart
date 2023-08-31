@@ -23,8 +23,8 @@ class home_screen extends StatelessWidget {
           body: Column(
             children: [
               const SizedBox(height: 30),
-              const Text("Chose Your Favourite Sport",style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 35)),
-              const SizedBox(height:1),
+              const Text("Chose Your Favourite Sport",style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25)),
+              const SizedBox(height:100),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
