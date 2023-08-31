@@ -91,7 +91,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute<void>(
-                        builder: (BuildContext context) => const HomeScreen(),
+                        builder: (BuildContext context) => home_screen(),
                       ),
                     );
                   },
