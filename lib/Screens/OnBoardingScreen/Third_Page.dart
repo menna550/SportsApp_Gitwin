@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sports_app/Shared/Colors.dart';
+import 'package:sports_app/Shared/Fonts.dart';
 
-class ThirdPage extends StatelessWidget {
-  const ThirdPage({super.key});
+class Page3 extends StatelessWidget {
+  const Page3({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(40.0),
@@ -21,29 +22,29 @@ class ThirdPage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
-                //crossAxisAlignment: CrossAxisAlignment.center,
+                //mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Lottie.asset('assets/animation_llwxhk8y.json'),
+                  Lottie.asset(
+                    'assets/animation_llwxhk8y.json',
+                    width: MediaQuery.of(context).size.width * 0.90,
+                    height: MediaQuery.of(context).size.height * 0.35,
+                  ),
                   // Image(
                   //     image: AssetImage('assets/image3-removebg-preview.png')),
-                  SizedBox(
-                    height: 20,
-                  ),
+
                   Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 20),
                     child: Text(
                       // 'Enjoy!',
                       'We hope you enjoy using our app!',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.saira(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.textcolor),
+                        fontSize: AppFonts.fontsize24,
+                        fontWeight: AppFonts.fontWeight700,
+                        color: AppColors.textcolor,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 30,
                   ),
                 ],
               ),

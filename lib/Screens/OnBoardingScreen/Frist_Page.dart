@@ -1,15 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:sports_app/Shared/Colors.dart';
+import 'package:sports_app/Shared/Fonts.dart';
 
-class FristPage extends StatelessWidget {
-  const FristPage({super.key});
+class Page1 extends StatelessWidget {
+  const Page1({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.primaryColor,
       body: Padding(
         padding: const EdgeInsets.all(40.0),
@@ -23,27 +24,29 @@ class FristPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Lottie.asset('assets/animation_llxdii92.json',
-                      width: 150, height: 150),
+                      width: MediaQuery.of(context).size.width * 0.40,
+                      height: MediaQuery.of(context).size.height * 0.30),
                   // Image(
                   //     image: AssetImage('assets/image1-removebg-preview.png')),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    'Welcome to our app!',
-                    style: GoogleFonts.saira(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.textcolor),
-                  ),
                   SizedBox(
                     height: 20,
                   ),
                   Text(
-                    'We are excited to help you stay up-to-date on your favorite sports.',
-                    style: GoogleFonts.saira(color: AppColors.textcolor),
-                    textAlign: TextAlign.center,
-                  )
+                    'Welcome to our app!',
+                    style: GoogleFonts.saira(
+                        fontSize: AppFonts.fontsize24,
+                        fontWeight: AppFonts.fontWeight700,
+                        color: AppColors.textcolor),
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      'We are excited to help you stay up-to-date on your favorite sports.',
+                      style: GoogleFonts.saira(color: AppColors.textcolor),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ],
               ),
             ),
