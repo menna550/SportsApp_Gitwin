@@ -20,10 +20,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<CountriesCubit>(
-      create: (BuildContext context) => CountriesCubit(),
-    ),
-
-
+          create: (BuildContext context) => CountriesCubit(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -34,7 +32,6 @@ class MyApp extends StatelessWidget {
         ),
         home: showHome ? home_screen() : OnBoardingScreen(),
       ),
-      
     );
   }
 }

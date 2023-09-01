@@ -19,35 +19,38 @@ class Page3 extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
           child: Container(
             color: AppColors.secondaryColor,
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                //mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Lottie.asset(
-                    'assets/animation_llwxhk8y.json',
-                    width: MediaQuery.of(context).size.width * 0.90,
-                    height: MediaQuery.of(context).size.height * 0.35,
-                  ),
-                  // Image(
-                  //     image: AssetImage('assets/image3-removebg-preview.png')),
+            child: Column(
+              //mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                // Lottie.asset(
+                //   'assets/animation_llwxhk8y.json',
+                //   width: MediaQuery.of(context).size.width * 0.90,
+                //   height: MediaQuery.of(context).size.height * 0.35,
+                // ),
+                // Image(
+                //     image: AssetImage('assets/image3-removebg-preview.png')),
 
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 20),
-                    child: Text(
-                      // 'Enjoy!',
-                      'We hope you enjoy using our app!',
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.saira(
-                        fontSize: AppFonts.fontsize24,
-                        fontWeight: AppFonts.fontWeight700,
-                        color: AppColors.textcolor,
-                      ),
+                Image(image: AssetImage('assets/pro.png')),
+
+                SizedBox(
+                  height: 30,
+                ),
+
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                  child: Text(
+                    // 'Enjoy!',
+                    'We hope you enjoy using our app!',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.saira(
+                      fontSize: AppFonts.fontsize24,
+                      fontWeight: AppFonts.fontWeight700,
+                      color: AppColors.textcolor,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
