@@ -65,14 +65,14 @@ class home_screen extends StatelessWidget {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
-                                    title: const Text(
+                                    title: Text(
                                       "Coming Soon",
-                                      style:
-                                          TextStyle(color: Color(0xFF112A46)),
+                                      style: TextStyle(
+                                          color: AppColors.primaryColor),
                                     ),
-                                    content: const Text(' stay tuned',
+                                    content: Text(' stay tuned',
                                         style: TextStyle(
-                                            color: Color(0xFF112A46))),
+                                            color: AppColors.primaryColor)),
                                     actions: [
                                       TextButton(
                                           onPressed: () =>
