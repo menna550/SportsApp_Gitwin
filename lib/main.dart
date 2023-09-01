@@ -16,7 +16,6 @@ class MyApp extends StatelessWidget {
   final bool showHome;
   const MyApp({Key? key, required this.showHome}) : super(key: key);
 
-  @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
@@ -33,11 +32,13 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: OnBoardingScreen(),
+        home: showHome ? home_screen() : OnBoardingScreen(),
       ),
 
 
-      home: showHome ? HomeScreen() : OnBoardingScreen(),
+
+      
+
 
     );
   }
