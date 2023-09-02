@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sports_app/Shared/Colors.dart';
 
+import '../Shared/Drawer_List.dart';
+import '../Shared/Drawer_header.dart';
+
 class home_screen extends StatelessWidget {
   home_screen({super.key});
 
@@ -19,16 +22,31 @@ class home_screen extends StatelessWidget {
       // right: true,
       top: true,
       child: Scaffold(
+          appBar: AppBar(
+            iconTheme: IconThemeData(color: AppColors.textcolor),
+            backgroundColor: AppColors.primaryColor,
+            elevation: 0,
+          ),
+          drawer: Drawer(
+              backgroundColor: AppColors.textcolor,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    MyDrawerHeader(),
+                    MyDrawerList(v: Draweritem.home),
+                  ],
+                ),
+              )),
           backgroundColor: AppColors.primaryColor,
           body: Column(
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 10),
               const Text("Choose Your Favourite Sport",
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       fontSize: 25)),
-              const SizedBox(height: 140),
+              const SizedBox(height: 100),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
