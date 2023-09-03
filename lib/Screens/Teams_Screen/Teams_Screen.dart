@@ -95,7 +95,7 @@ class _Teams_ScreenState extends State<Teams_Screen>
                                     ]),
                                 child: const Text(
                                   "Teams",
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(color: Colors.white, fontSize: 16),
                                 ),
                               ),
                               Container(
@@ -114,7 +114,7 @@ class _Teams_ScreenState extends State<Teams_Screen>
                                     ]),
                                 child: const Text(
                                   "Top Scorers",
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(color: Colors.white, fontSize: 16),
                                 ),
                               ),
                             ])),

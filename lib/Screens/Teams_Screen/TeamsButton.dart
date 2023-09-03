@@ -37,17 +37,20 @@ class _TeamsButtonState extends State<TeamsButton> {
                             borderRadius: BorderRadius.circular(50),
                             color: AppColors.secondaryColor,
                           ),
-                          child: Row(
-                            // mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset("assets/RealMadried.com.png",
-                                  width: 50, height: 50),
-                              const SizedBox(width:10,),
-                              const Text(
-                                "RealMadrid",
-                                style: TextStyle(color: Colors.white, fontSize: 20),
-                              )
-                            ],
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Row(
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset("assets/RealMadried.com.png",
+                                    width: 50, height: 50),
+                                const SizedBox(width:10,),
+                                const Text(
+                                  "RealMadrid",
+                                  style: TextStyle(color: Colors.white, fontSize: 20),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
