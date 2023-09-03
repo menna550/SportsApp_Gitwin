@@ -59,85 +59,98 @@ class _ProfileScreenState extends State<ProfileScreen> {
           )),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.15,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile.png'),
-                    radius: 50,
-                  ),
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.20,
-                  width: MediaQuery.of(context).size.width * 0.25,
-                ),
-                Positioned(
-                  left: 55,
-                  top: 80,
-                  child: Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.orange,
-                        border: Border.all(color: AppColors.primaryColor)),
-                    child: IconButton(
-                      iconSize: 15,
-                      color: AppColors.textcolor,
-                      icon: Icon(Icons.edit),
-                      onPressed: () {},
+        child: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.15,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/profile.png'),
+                      radius: 50,
                     ),
                   ),
-                ),
-              ],
-            ),
-            Text(
-              'My Name',
-              style: TextStyle(color: AppColors.textcolor),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            info2(icon: Icons.person, title: 'Name', describtion: 'My Name'),
-            SizedBox(
-              height: 15,
-            ),
-            info2(
-                icon: Icons.email,
-                title: 'Email',
-                describtion: 'example@gmail.com'),
-            SizedBox(
-              height: 15,
-            ),
-            info2(
-                icon: Icons.phone,
-                title: 'Phone',
-                describtion: '+20 0101 254 1543'),
-            SizedBox(
-              height: 15,
-            ),
-            info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.20,
+                    width: MediaQuery.of(context).size.width * 0.25,
+                  ),
+                  Positioned(
+                    left: 55,
+                    top: 80,
+                    child: Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.orange,
+                          border: Border.all(color: AppColors.primaryColor)),
+                      child: IconButton(
+                        iconSize: 15,
+                        color: AppColors.textcolor,
+                        icon: Icon(Icons.edit),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Text(
+                'My Name',
+                style: TextStyle(color: AppColors.textcolor),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              info2(icon: Icons.person, title: 'Name', describtion: 'My Name'),
+              SizedBox(
+                height: 15,
+              ),
+              info2(
+                  icon: Icons.email,
+                  title: 'Email',
+                  describtion: 'example@gmail.com'),
+              SizedBox(
+                height: 15,
+              ),
+              info2(
+                  icon: Icons.phone,
+                  title: 'Phone',
+                  describtion: '+20 0101 254 1543'),
+              SizedBox(
+                height: 15,
+              ),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
 
-            // TextFormField(
-            //   style: TextStyle(color: AppColors.textcolor),
-            //   decoration: InputDecoration(
-            //     labelText: 'Email',
-            //     hintText: 'example@gmail.com',
-            //   ),
-            // ),
-            // TextFormField(
-            //   style: TextStyle(color: AppColors.textcolor),
-            //   decoration: InputDecoration(
-            //     labelText: 'User Name',
-            //     hintText: 'mai dkfo',
-            //   ),
-            // ),
-          ],
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
+
+              // TextFormField(
+              //   style: TextStyle(color: AppColors.textcolor),
+              //   decoration: InputDecoration(
+              //     labelText: 'Email',
+              //     hintText: 'example@gmail.com',
+              //   ),
+              // ),
+              // TextFormField(
+              //   style: TextStyle(color: AppColors.textcolor),
+              //   decoration: InputDecoration(
+              //     labelText: 'User Name',
+              //     hintText: 'mai dkfo',
+              //   ),
+              // ),
+            ],
+          ),
         ),
       ),
     );

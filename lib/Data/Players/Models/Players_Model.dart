@@ -26,14 +26,14 @@ class PlayersData {
 
 class Result {
   int? playerKey;
-  String? playerName;
+  late final String playerName;
   String? playerNumber;
   String? playerCountry;
-  String? playerType;
+  late String playerType;
   String? playerAge;
   String? playerMatchPlayed;
   String? playerGoals;
-  String? playerYellowCards;
+  late String playerYellowCards;
   String? playerRedCards;
   String? playerMinutes;
   String? playerInjured;
@@ -71,14 +71,14 @@ class Result {
 
   Result(
       {this.playerKey,
-      this.playerName,
+      required this.playerName,
       this.playerNumber,
       this.playerCountry,
-      this.playerType,
+      required this.playerType,
       this.playerAge,
       this.playerMatchPlayed,
       this.playerGoals,
-      this.playerYellowCards,
+      required this.playerYellowCards,
       this.playerRedCards,
       this.playerMinutes,
       this.playerInjured,

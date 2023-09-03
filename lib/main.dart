@@ -6,6 +6,8 @@ import 'package:sports_app/Screens/Home_Screen.dart';
 import 'package:sports_app/Screens/OnBoardingScreen/On_Boarding_Screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sports_app/Screens/Players_Screen/players.dart';
+import 'package:sports_app/Screens/Players_Screen/test.dart';
+import 'package:sports_app/Screens/Teams_Screen/Teams_Screen.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,9 +37,9 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: PlayersScreen(),
-        //showHome ? home_screen() : OnBoardingScreen(),
+        home: Test(),
       ),
+      //home: showHome ? home_screen() : OnBoardingScreen(),
     );
   }
 }
