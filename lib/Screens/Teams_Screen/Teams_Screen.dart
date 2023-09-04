@@ -7,6 +7,8 @@ import 'package:sports_app/Screens/Teams_Screen/searchForData.dart';
 import 'package:sports_app/Shared/Fonts.dart';
 
 import '../../Shared/Colors.dart';
+import '../../Shared/Drawer_List.dart';
+import '../../Shared/Drawer_header.dart';
 
 class Teams_Screen extends StatefulWidget {
   const Teams_Screen({super.key});
@@ -126,7 +128,7 @@ class _Teams_ScreenState extends State<Teams_Screen>
                                 ),
                               ),
                             ])),
-                  ))
+                  )),
             ];
           },
           body: TabBarView(controller: _tabController, children: const [

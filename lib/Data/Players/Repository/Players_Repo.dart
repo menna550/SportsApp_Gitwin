@@ -5,12 +5,16 @@ import 'package:http/http.dart' as http;
 
 import '../Models/Players_Model.dart';
 
+var teamId = 96;
+
 class GetPlayersRepo {
   Future<PlayersData?> getPlayers() async {
+    String apiKey =
+        '61137bf4d63c0690e661ea062464a5395e88b5b45347ba0957f70fef270013b2';
     try {
       var response = await http.get(
         Uri.parse(
-            "https://apiv2.allsportsapi.com/football/?&met=Players&playerId=103051168&APIkey=61137bf4d63c0690e661ea062464a5395e88b5b45347ba0957f70fef270013b2"),
+            'https://apiv2.allsportsapi.com/football/?&met=Players&teamId=$teamId&APIkey=$apiKey'),
       );
 
       var decodedResponse = jsonDecode(response.body);
