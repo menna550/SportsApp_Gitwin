@@ -1,12 +1,10 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:sports_app/Data/Cubits/Countries_cubit/cubit/Lega/get_lega_cubit.dart';
-import 'package:sports_app/Data/Models/Countries_Model.dart';
 import 'package:sports_app/Data/Models/Lega_Model.dart';
 
 class GetLegaRepo {
-  Future<GetLegaModel?> GetLega() async {
+  Future<GetLegaModel?> getLega() async {
     try {
       var response = await http.get(
         Uri.parse(
