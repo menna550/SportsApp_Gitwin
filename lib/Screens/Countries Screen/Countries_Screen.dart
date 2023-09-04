@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sports_app/Cubits_Logic/Countries_Screen_Logic/location_cubit_cubit.dart';
 import 'package:sports_app/Data/Cubits/Countries_cubit/countries_cubit.dart';
-import 'package:sports_app/Data/Cubits/Countries_cubit/cubit/cubit/get_lega_cubit.dart';
 import 'package:sports_app/Data/Models/Countries_Model.dart';
 import 'package:sports_app/Data/Models/Countries_Model.dart';
 import 'package:sports_app/Data/Models/Countries_Model.dart';
@@ -11,6 +10,7 @@ import 'package:sports_app/Shared/Colors.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:geocoding/geocoding.dart';
 
+import '../../Data/Cubits/Lega_cubit/get_lega_cubit.dart';
 import '../../Data/Models/Countries_Model.dart';
 
 GlobalKey key = GlobalKey();

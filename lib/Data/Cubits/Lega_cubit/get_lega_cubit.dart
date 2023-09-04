@@ -6,8 +6,8 @@ import 'package:meta/meta.dart';
 import 'package:sports_app/Screens/Lega/lega.dart';
 
 import '../../../../../Screens/Countries Screen/Countries_Screen.dart';
-import '../../../../Models/Lega_Model.dart';
-import '../../../../Repository/get_lega_repo.dart';
+import '../../Models/Lega_Model.dart';
+import '../../Repository/get_lega_repo.dart';
 
 part 'get_lega_state.dart';
 

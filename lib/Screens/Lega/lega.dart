@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_app/Data/Cubits/Countries_cubit/cubit/cubit/get_lega_cubit.dart';
+
+import '../../Data/Cubits/Lega_cubit/get_lega_cubit.dart';
 
 class Lega extends StatelessWidget {
   const Lega({super.key});
