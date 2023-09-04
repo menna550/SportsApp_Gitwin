@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sports_app/Shared/Colors.dart';
 
+import '../Shared/Drawer_List.dart';
+import '../Shared/Drawer_header.dart';
 
 class home_screen extends StatelessWidget {
   home_screen({super.key});
@@ -19,12 +22,31 @@ class home_screen extends StatelessWidget {
       // right: true,
       top: true,
       child: Scaffold(
-          backgroundColor: Color(0xFF112A46),
+          appBar: AppBar(
+            iconTheme: IconThemeData(color: AppColors.textcolor),
+            backgroundColor: AppColors.primaryColor,
+            elevation: 0,
+          ),
+          drawer: Drawer(
+              backgroundColor: AppColors.textcolor,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    MyDrawerHeader(),
+                    MyDrawerList(v: Draweritem.home),
+                  ],
+                ),
+              )),
+          backgroundColor: AppColors.primaryColor,
           body: Column(
             children: [
-              const SizedBox(height: 30),
-              const Text("Chose Your Favourite Sport",style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25)),
-              const SizedBox(height:100),
+              const SizedBox(height: 10),
+              const Text("Choose Your Favourite Sport",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25)),
+              const SizedBox(height: 100),
               Expanded(
                 child: GridView.count(
                   crossAxisCount: 2,
@@ -35,9 +57,8 @@ class home_screen extends StatelessWidget {
                         onTap: () {},
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: const Color(0xFF416389),
-                          ),
+                              borderRadius: BorderRadius.circular(50),
+                              color: AppColors.secondaryColor),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -45,7 +66,8 @@ class home_screen extends StatelessWidget {
                                   width: 50, height: 50),
                               const Text(
                                 "Football",
-                                style: TextStyle(color: Colors.white, fontSize: 25),
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 25),
                               )
                             ],
                           ),
@@ -61,14 +83,18 @@ class home_screen extends StatelessWidget {
                                 context: context,
                                 builder: (context) {
                                   return AlertDialog(
-                                    title: const Text(
+                                    title: Text(
                                       "Coming Soon",
-                                      style: TextStyle(color: Color(0xFF112A46)),
+                                      style: TextStyle(
+                                          color: AppColors.primaryColor),
                                     ),
-                                    content: const Text(' stay tuned',style: TextStyle(color: Color(0xFF112A46))),
+                                    content: Text(' stay tuned',
+                                        style: TextStyle(
+                                            color: AppColors.primaryColor)),
                                     actions: [
                                       TextButton(
-                                          onPressed: () => Navigator.of(context).pop(),
+                                          onPressed: () =>
+                                              Navigator.of(context).pop(),
                                           child: const Text('Close '))
                                     ],
                                   );
@@ -77,7 +103,7 @@ class home_screen extends StatelessWidget {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
-                              color: const Color(0xFF416389),
+                              color: AppColors.secondaryColor,
                             ),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +111,8 @@ class home_screen extends StatelessWidget {
                                 Image.asset(logo[i], width: 50, height: 50),
                                 Text(
                                   name[i],
-                                  style: TextStyle(color: Colors.white, fontSize: 25),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 25),
                                 )
                               ],
                             ),
