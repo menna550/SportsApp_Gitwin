@@ -39,6 +39,14 @@ dependencies:
   shared_preferences: ^2.2.0
   lottie: ^2.6.0
   flutter_bloc: ^8.1.3
+<<<<<<< HEAD
+  bloc: ^8.1.2
+  http: ^1.1.0
+  share_plus: ^2.1.1
+  anim_search_bar: ^2.0.3
+
+
+=======
   permission_handler: ^10.4.3
   geolocator: ^10.0.0
   geocoding: ^2.1.0
@@ -50,6 +58,7 @@ dependencies:
   firebase_core: ^2.15.1
   firebase_messaging: ^14.6.7
   flutter_local_notifications: ^15.1.1
+>>>>>>> 2081891541163ecba43a63e30bcaaf53ca9bb9d0
 
 dev_dependencies:
   flutter_test:
