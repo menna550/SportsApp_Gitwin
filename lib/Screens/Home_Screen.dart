@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sports_app/Shared/Colors.dart';
 
-<<<<<<< HEAD
+
 import '../Shared/Drawer_List.dart';
 import '../Shared/Drawer_header.dart';
-=======
+
 import '../Data/Cubits/Countries_cubit/countries_cubit.dart';
->>>>>>> 2081891541163ecba43a63e30bcaaf53ca9bb9d0
+
 
 class home_screen extends StatelessWidget {
   home_screen({super.key});

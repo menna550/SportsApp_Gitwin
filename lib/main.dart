@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
         BlocProvider<CountriesCubit>(
           create: (BuildContext context) => CountriesCubit(),
         ),
-<<<<<<< HEAD
+
         BlocProvider<PlayersCubit>(
-          create: (BuildContext context) => PlayersCubit(),
-=======
+          create: (BuildContext context) => PlayersCubit(),),
+
         BlocProvider<LocationCubitCubit>(
           create: (BuildContext context) => LocationCubitCubit(),
->>>>>>> 2081891541163ecba43a63e30bcaaf53ca9bb9d0
+
         ),
       ],
       child: MaterialApp(

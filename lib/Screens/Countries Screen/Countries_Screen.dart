@@ -116,7 +116,7 @@ class Countries_Screen extends StatelessWidget {
 
                                   if (context.read<LocationCubitCubit>().s == state.response.result[i].countryName)
 
-                                     Container(
+                                    Container(
                                     decoration: BoxDecoration(
                                         border: Border.all(
                                           width: 4,
