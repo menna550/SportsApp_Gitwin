@@ -35,7 +35,7 @@ class Result {
     countryKey = json['country_key'];
     countryName = json['country_name'];
     countryIso2 = json['country_Iso2'];
-    countryLogo = json['country_Logo'];
+    countryLogo = json['country_logo'];
   }
 
   Map<String, dynamic> toJson() {

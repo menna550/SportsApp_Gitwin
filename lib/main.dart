@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sports_app/Cubits_Logic/Countries_Screen_Logic/location_cubit_cubit.dart';
 import 'package:sports_app/Data/Cubits/Countries_cubit/countries_cubit.dart';
 import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
@@ -26,8 +27,13 @@ class MyApp extends StatelessWidget {
         BlocProvider<CountriesCubit>(
           create: (BuildContext context) => CountriesCubit(),
         ),
+<<<<<<< HEAD
         BlocProvider<PlayersCubit>(
           create: (BuildContext context) => PlayersCubit(),
+=======
+        BlocProvider<LocationCubitCubit>(
+          create: (BuildContext context) => LocationCubitCubit(),
+>>>>>>> 2081891541163ecba43a63e30bcaaf53ca9bb9d0
         ),
       ],
       child: MaterialApp(
@@ -39,6 +45,7 @@ class MyApp extends StatelessWidget {
         ),
         home: showHome ? home_screen() : OnBoardingScreen(),
       ),
+      
     );
   }
 }

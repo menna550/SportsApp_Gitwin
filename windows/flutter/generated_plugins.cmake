@@ -3,6 +3,13 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+<<<<<<< HEAD
+=======
+  firebase_core
+  geolocator_windows
+  permission_handler_windows
+  rive_common
+>>>>>>> 2081891541163ecba43a63e30bcaaf53ca9bb9d0
   url_launcher_windows
 )
 
