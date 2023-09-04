@@ -47,6 +47,9 @@ dependencies:
   location: ^5.0.3
   url_launcher: ^6.1.14
   awesome_dialog: ^3.1.0
+  firebase_core: ^2.15.1
+  firebase_messaging: ^14.6.7
+  flutter_local_notifications: ^15.1.1
 
 dev_dependencies:
   flutter_test:
