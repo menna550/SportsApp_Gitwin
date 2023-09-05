@@ -12,7 +12,7 @@ class TeamsCubit extends Cubit<TeamsState> {
 
   GetTeamsRepo teamsRepo = GetTeamsRepo();
 
-  getteamsRepo(context) async {
+  getTeams(context) async {
     emit(TeamsLoading());
 
     try {
