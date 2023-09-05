@@ -22,7 +22,7 @@ class GetLegaCubit extends Cubit<GetLegaState> {
           emit(GetLegaSuccess(response: value));
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Countries_Screen()),
+            MaterialPageRoute(builder: (context) => const Lega()),
           );
         } else {
           emit(GetLegaError());

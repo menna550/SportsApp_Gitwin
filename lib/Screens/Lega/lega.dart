@@ -25,7 +25,7 @@ class Lega extends StatelessWidget {
               if (state is GetLegaSuccess) {
                 return ListView(
                   children: [
-                    for (int i = 0; i < 30; i++)
+                    for (int i = 0; i < state.response.result!.length; i++)
                       Container(
                         color: Color.fromARGB(179, 199, 197, 196),
                         height: 1000,

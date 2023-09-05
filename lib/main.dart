@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sports_app/Cubits_Logic/Countries_Screen_Logic/location_cubit_cubit.dart';
 import 'package:sports_app/Data/Cubits/Countries_cubit/countries_cubit.dart';
+import 'package:sports_app/Data/Cubits/cubit/get_lega_cubit.dart';
 import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
 import 'package:sports_app/Screens/Countries%20Screen/Countries_Screen.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<LocationCubitCubit>(
           create: (BuildContext context) => LocationCubitCubit(),
         ),
+        BlocProvider<GetLegaCubit>(
+          create: (BuildContext context) => GetLegaCubit(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -43,7 +47,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Countries_Screen(),
+        home: Lega(),
       ),
     );
   }

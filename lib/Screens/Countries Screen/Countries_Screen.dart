@@ -111,7 +111,11 @@ class Countries_Screen extends StatelessWidget {
                                     return CircularProgressIndicator();
                                   } else if (state is GetLegaSuccess) {
                                     return InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        context
+                                            .read<GetLegaCubit>()
+                                            .getLega(context);
+                                      },
                                       child: Column(children: [
                                         if (context
                                                 .read<LocationCubitCubit>()
