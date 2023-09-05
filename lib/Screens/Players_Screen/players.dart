@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
 import 'package:sports_app/Shared/Colors.dart';
@@ -9,6 +8,7 @@ import 'package:sports_app/Shared/Colors.dart';
 import 'package:sports_app/Shared/Fonts.dart';
 import 'package:sports_app/Shared/comp_players.dart';
 
+import '../../Data/Cubits/Players_cubit/players_cubit.dart';
 import '../../Shared/Drawer_List.dart';
 import '../../Shared/Drawer_header.dart';
 import '../Drawer/Profile_screen.dart';
@@ -157,7 +157,8 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                             ),
                                             Text(
                                                 state.response.result![index]
-                                                    .playerName,
+                                                        .playerName ??
+                                                    "n",
                                                 style: TextStyle(
                                                     color: AppColors.textcolor,
                                                     fontSize:
@@ -175,9 +176,10 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                 info(
                                                   img: 'assets/yellowcard.png',
                                                   text2: state
-                                                      .response
-                                                      .result![index]
-                                                      .playerYellowCards,
+                                                          .response
+                                                          .result![index]
+                                                          .playerYellowCards ??
+                                                      "00",
                                                 ),
                                                 verticalline(),
                                                 info(
@@ -231,8 +233,11 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                             info2(
                                                 icon: Icons.person,
                                                 title: 'Name',
-                                                describtion: state.response
-                                                    .result![index].playerName),
+                                                describtion: state
+                                                        .response
+                                                        .result![index]
+                                                        .playerName ??
+                                                    "n"),
                                             const SizedBox(
                                               height: 15,
                                             ),
@@ -261,8 +266,11 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                             info2(
                                                 icon: Icons.place,
                                                 title: 'Position',
-                                                describtion: state.response
-                                                    .result![index].playerType),
+                                                describtion: state
+                                                        .response
+                                                        .result![index]
+                                                        .playerType ??
+                                                    "n"),
                                             const SizedBox(
                                               height: 15,
                                             ),
@@ -279,9 +287,10 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                               child: IconButton(
                                                   onPressed: () async {
                                                     String playerName = state
-                                                        .response
-                                                        .result![index]
-                                                        .playerName;
+                                                            .response
+                                                            .result![index]
+                                                            .playerName ??
+                                                        "n";
                                                     String playerNumber = state
                                                             .response
                                                             .result![index]
@@ -338,7 +347,8 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                         children: [
                                           Text(
                                             state.response.result![index]
-                                                .playerName,
+                                                    .playerName ??
+                                                "n",
                                             style: TextStyle(
                                                 fontSize: AppFonts.fontsize16,
                                                 fontWeight: FontWeight.w600,
@@ -346,7 +356,8 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                           ),
                                           Text(
                                               state.response.result![index]
-                                                  .playerType,
+                                                      .playerType ??
+                                                  "n",
                                               style: TextStyle(
                                                   fontSize: AppFonts.fontsize12,
                                                   color: AppColors.textcolor)),

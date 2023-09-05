@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
+import 'package:sports_app/Data/Cubits/cubit/teams_cubit.dart';
 
+import '../../Data/Cubits/Players_cubit/players_cubit.dart';
 import '../../Shared/Colors.dart';
 
 class TeamsButton extends StatefulWidget {
@@ -51,8 +52,11 @@ class _TeamsButtonState extends State<TeamsButton> {
                                 child: Row(
                                   // mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.asset("assets/RealMadried.com.png",
-                                        width: 50, height: 50),
+                                    // Image.network(
+                                    //     teamstate
+                                    //         .response.result[i].teamLogo,
+                                    //     width: 50,
+                                    //     height: 50),
                                     const SizedBox(
                                       width: 10,
                                     ),
@@ -77,4 +81,7 @@ class _TeamsButtonState extends State<TeamsButton> {
           ],
         ));
   }
+  //else {
+  //   return Text('data');
+  // }
 }
