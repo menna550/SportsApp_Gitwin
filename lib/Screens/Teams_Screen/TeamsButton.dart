@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
 
+import '../../Data/Cubits/Players_cubit/players_cubit.dart';
 import '../../Shared/Colors.dart';
 
 class TeamsButton extends StatefulWidget {

@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sports_app/Data/Players/Players_cubit/players_cubit.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
 import 'package:sports_app/Screens/Players_Screen/test.dart';
@@ -10,6 +9,7 @@ import 'package:sports_app/Shared/Colors.dart';
 import 'package:sports_app/Shared/Fonts.dart';
 import 'package:sports_app/Shared/comp_players.dart';
 
+import '../../Data/Cubits/Players_cubit/players_cubit.dart';
 import '../../Shared/Drawer_List.dart';
 import '../../Shared/Drawer_header.dart';
 import '../Drawer/Profile_screen.dart';
@@ -67,7 +67,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
           actions: [
             IconButton(
                 onPressed: () {
-                  showSearch(context: context, delegate: Scarch());
+                  //showSearch(context: context, delegate: Scarch());
                 },
                 icon: Icon(Icons.search)),
           ],
