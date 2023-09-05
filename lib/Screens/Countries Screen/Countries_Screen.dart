@@ -10,18 +10,15 @@ import 'package:sports_app/Shared/Colors.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:geocoding/geocoding.dart';
 
+import '../../Data/Cubits/Lega_cubit/get_lega_cubit.dart';
 import '../../Data/Models/Countries_Model.dart';
 
 GlobalKey key = GlobalKey();
 
 class Countries_Screen extends StatelessWidget {
-   Countries_Screen({super.key});
+  Countries_Screen({super.key});
 
-   ScrollController sc = ScrollController();
-
-  
-
-  
+  ScrollController sc = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,17 +66,15 @@ class Countries_Screen extends StatelessWidget {
                               .read<LocationCubitCubit>()
                               .getPosition(context);
 
-                                RenderBox box = key.currentContext
-                                ?.findRenderObject() as RenderBox;
-                            Offset position = box.localToGlobal(
-                                Offset.zero); //this is global position
-                            double y = position.dy;
+                          RenderBox box = key.currentContext?.findRenderObject()
+                              as RenderBox;
+                          Offset position = box.localToGlobal(
+                              Offset.zero); //this is global position
+                          double y = position.dy;
 
-                            
-
-                              sc.animateTo(y,
-                                duration: Duration(seconds: 1),
-                                curve: Curves.easeIn);
+                          sc.animateTo(y,
+                              duration: Duration(seconds: 1),
+                              curve: Curves.easeIn);
                         },
                         icon: Icon(
                           Icons.location_on_sharp,
@@ -110,57 +105,76 @@ class Countries_Screen extends StatelessWidget {
                             for (int i = 0;
                                 i < state.response.result.length;
                                 i++)
-                              InkWell(
-                                onTap: () {},
-                                child: Column(children: [
-
-                                  if (context.read<LocationCubitCubit>().s == state.response.result[i].countryName)
-
-                                    Container(
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                          width: 4,
-                                          color: Colors.white,
+                              BlocBuilder<GetLegaCubit, GetLegaState>(
+                                builder: (context, state) {
+                                  if (state is GetLegaLoading) {
+                                    return CircularProgressIndicator();
+                                  } else if (state is GetLegaSuccess) {
+                                    return InkWell(
+                                      onTap: () {
+                                        context
+                                            .read<GetLegaCubit>()
+                                            .getLega(context);
+                                      },
+                                      child: Column(children: [
+                                        if (context
+                                                .read<LocationCubitCubit>()
+                                                .s ==
+                                            state.response.result?[i]
+                                                .countryName)
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                border: Border.all(
+                                                  width: 4,
+                                                  color: Colors.white,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(10)),
+                                            child: CircleAvatar(
+                                              radius: 31,
+                                              backgroundImage: NetworkImage(
+                                                state.response.result?[i]
+                                                        .countryLogo ??
+                                                    "",
+                                                // height: MediaQuery.of(context).size.height * 0.12,
+                                              ),
+                                            ),
+                                            key: key,
+                                          ),
+                                        if (context
+                                                .read<LocationCubitCubit>()
+                                                .s !=
+                                            state.response.result?[i]
+                                                .countryName)
+                                          CircleAvatar(
+                                            backgroundColor:
+                                                AppColors.secondaryColor,
+                                            radius: 31,
+                                            backgroundImage: NetworkImage(
+                                              state.response.result?[i]
+                                                      .countryLogo ??
+                                                  "",
+                                            ),
+                                          ),
+                                        const SizedBox(
+                                          height: 8,
                                         ),
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: CircleAvatar(
-                                      radius: 31,
-                                      backgroundImage: NetworkImage(
-                                        state.response.result[i].countryLogo ??
-                                            "",
-                                        // height: MediaQuery.of(context).size.height * 0.12,
-                                      ),
-                                    ),
-                                    key: key,
-                                    
-                                  ),
-                                  
-
-                                  if(context.read<LocationCubitCubit>().s != state.response.result[i].countryName)
-
-
-
-
-                                  CircleAvatar(
-                                    backgroundColor: AppColors.secondaryColor,
-                                    radius: 31,
-                                    backgroundImage: NetworkImage(
-                                      state.response.result[i].countryLogo ??
-                                          "",
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 8,
-                                  ),
-                                  Text(state.response.result[i].countryName,
-                                      style: TextStyle(color: Colors.white)),
-                                ]),
+                                        Text(
+                                            state.response.result?[i]
+                                                .countryName as String,
+                                            style: const TextStyle(
+                                                color: Colors.white)),
+                                      ]),
+                                    );
+                                  } else {
+                                    return const Text('Something Went Wrong !');
+                                  }
+                                },
                               )
                           ],
                         );
                       } else {
-                        return Text('Something Went Wrong !');
+                        return const Text('Something Went Wrong !');
                       }
                     },
                   )),
@@ -169,6 +183,5 @@ class Countries_Screen extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }
