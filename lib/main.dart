@@ -10,6 +10,9 @@ import 'package:sports_app/Screens/Players_Screen/players.dart';
 import 'package:sports_app/Screens/Players_Screen/test.dart';
 import 'package:sports_app/Screens/Teams_Screen/Teams_Screen.dart';
 
+import 'Data/Cubits/Teams_cubit/teams_cubit.dart';
+import 'Data/Cubits/TopScorers_cubit/top_scorers_cubit.dart';
+
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
@@ -33,7 +36,18 @@ class MyApp extends StatelessWidget {
 
         BlocProvider<LocationCubitCubit>(
           create: (BuildContext context) => LocationCubitCubit(),
+        ),
 
+        // BlocProvider<LocationCubitCubit>(
+        //   create: (BuildContext context) => LocationCubitCubit(),
+        // ),
+
+        BlocProvider<TeamsCubit>(
+          create: (BuildContext context) => TeamsCubit(),
+        ),
+
+        BlocProvider<TopScorersCubit>(
+          create: (BuildContext context) => TopScorersCubit(),
         ),
       ],
       child: MaterialApp(
@@ -43,7 +57,18 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: showHome ? home_screen() : OnBoardingScreen(),
+        home: Teams_Screen(),
+        // home: showHome ? home_screen() : OnBoardingScreen(),
+        // supportedLocales: [
+        //   Locale('en'),
+        //   Locale('ar'),
+        // ],
+        // localizationsDelegates: [
+        //   GlobalMaterialLocalizations.delegate,
+        //   GlobalWidgetsLocalizations.delegate,
+        //   GlobalCupertinoLocalizations.delegate,
+
+        // ],
       ),
       
     );
