@@ -38,10 +38,6 @@ class MyApp extends StatelessWidget {
           create: (BuildContext context) => LocationCubitCubit(),
         ),
 
-        // BlocProvider<LocationCubitCubit>(
-        //   create: (BuildContext context) => LocationCubitCubit(),
-        // ),
-
         BlocProvider<TeamsCubit>(
           create: (BuildContext context) => TeamsCubit(),
         ),
@@ -59,16 +55,7 @@ class MyApp extends StatelessWidget {
         ),
         home: Teams_Screen(),
         // home: showHome ? home_screen() : OnBoardingScreen(),
-        // supportedLocales: [
-        //   Locale('en'),
-        //   Locale('ar'),
-        // ],
-        // localizationsDelegates: [
-        //   GlobalMaterialLocalizations.delegate,
-        //   GlobalWidgetsLocalizations.delegate,
-        //   GlobalCupertinoLocalizations.delegate,
-
-        // ],
+      
       ),
       
     );
