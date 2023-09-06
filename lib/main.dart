@@ -5,10 +5,16 @@ import 'package:my_verifications/Screens/otp_screen.dart';
 import 'package:my_verifications/Screens/register_screen.dart';
 import 'package:my_verifications/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:safetynet_attestation/safetynet_attestation.dart';
+// import com.google.firebase.FirebaseApp
+// import com.google.firebase.appcheck.FirebaseAppCheck
+// import com.google.firebase.appcheck.safetynet.SafetyNetAppCheckProviderFactory
 void main() async
 {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  FirebaseAppCheck.instance.activate();
 
   runApp(const MyApp());
 

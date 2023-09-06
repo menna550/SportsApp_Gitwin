@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_verifications/Screens/userInformationScreen.dart';
 import 'package:my_verifications/provider/auth_provider.dart';
 import 'package:my_verifications/utils/utils.dart';
 import 'package:pinput/pinput.dart';
@@ -112,6 +113,15 @@ class _OtpScreenState extends State<OtpScreen> {
   }
   void verifyOtp(BuildContext context,String userOtp){
     final ap = Provider.of<AuthProvider>(context, listen:false);
-    ap.verifyOtp(context: context, verificationId: widget.verificationId, userOtp: userOtp, onSuccess: (){});
+    ap.verifyOtp(context: context, verificationId: widget.verificationId, userOtp: userOtp,
+        onSuccess: (){
+      ap.checkExistingUser().then((value) async{
+        if(value==true){
+
+        }else{
+          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const userInformationScreen()), (route) => false);
+        }
+      });
+        });
   }
 }
