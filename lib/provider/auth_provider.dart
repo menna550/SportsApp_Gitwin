@@ -8,9 +8,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 class AuthProvider extends ChangeNotifier {
   bool _isSignedIn = false;
-  bool get isSignedIn => isSignedIn;
+  bool get isSignedIn => _isSignedIn;
   bool _isLoading = false;
-  bool get isLoading => isLoading;
+  bool get isLoading => _isLoading;
   String? _uid;
   String get uid => _uid!;
 
@@ -63,7 +63,7 @@ class AuthProvider extends ChangeNotifier {
       PhoneAuthCredential creds = PhoneAuthProvider.credential(
           verificationId: verificationId, smsCode: userOtp);
       User? user = (await _firebaseAuth.signInWithCredential(creds)).user!;
-      if(user != null){
+      if (user != null) {
         _uid = user.uid;
         onSuccess();
       }
@@ -75,12 +75,14 @@ class AuthProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-  Future<bool> checkExistingUser() async{
-    DocumentSnapshot snapshot = await _firebaseFirestore.collection("users").doc(_uid).get();
-    if(snapshot.exists){
+
+  Future<bool> checkExistingUser() async {
+    DocumentSnapshot snapshot =
+        await _firebaseFirestore.collection("users").doc(_uid).get();
+    if (snapshot.exists) {
       print("User Exists");
       return true;
-    }else{
+    } else {
       print("New Exists");
       return false;
     }
