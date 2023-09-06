@@ -61,5 +61,7 @@ class LocationCubitCubit extends Cubit<LocationCubitState> {
     emit(LocationCubitInitial());
   }
 
-  
+  render(){
+    emit(LocationCubitn());
+  }
 }
