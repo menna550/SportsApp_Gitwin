@@ -15,16 +15,16 @@ class PlayersCubit extends Cubit<PlayersState> {
 
   GetPlayersRepo playersRepo = GetPlayersRepo();
 
-  getPlayers(context) async {
+  getPlayers(context, {required String teamID}) async {
     emit(PlayersLoading());
 
     try {
-      await playersRepo.getPlayers().then((value) {
+      await playersRepo.getPlayers(teamID).then((value) {
         if (value != null) {
           emit(PlayersSuccess(response: value));
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => PlayersScreen()),
+            MaterialPageRoute(builder: (context) => const PlayersScreen()),
           );
         } else {
           emit(PlayersError());

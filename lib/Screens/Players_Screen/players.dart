@@ -168,7 +168,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                             Text(
                                                 state.response.result![index]
                                                         .playerName ??
-                                                    "",
+                                                    "n",
                                                 style: TextStyle(
                                                     color: AppColors.textcolor,
                                                     fontSize:
@@ -189,7 +189,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                           .response
                                                           .result![index]
                                                           .playerYellowCards ??
-                                                      "",
+                                                      "00",
                                                 ),
                                                 verticalline(),
                                                 info(
@@ -247,7 +247,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                         .response
                                                         .result![index]
                                                         .playerName ??
-                                                    ""),
+                                                    "n"),
                                             const SizedBox(
                                               height: 15,
                                             ),
@@ -280,7 +280,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                         .response
                                                         .result![index]
                                                         .playerType ??
-                                                    ""),
+                                                    "pp"),
                                             const SizedBox(
                                               height: 15,
                                             ),
@@ -300,7 +300,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                             .response
                                                             .result![index]
                                                             .playerName ??
-                                                        "";
+                                                        "0";
                                                     String playerNumber = state
                                                             .response
                                                             .result![index]
