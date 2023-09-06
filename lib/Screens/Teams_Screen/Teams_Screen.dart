@@ -390,13 +390,15 @@ class _Teams_ScreenState extends State<Teams_Screen>
     // Initialize the tab controller with two tabs
     tabController = TabController(length: 2, vsync: this);
     // Fetch the data for each tab when it becomes active
-    tabController.addListener(() {
-      if (tabController.index == 0) {
-        context.read<TeamsCubit>().getTeams(context);
-      } else if (tabController.index == 1) {
-        context.read<TopScorersCubit>().getTopScorers(context);
-      }
-    });
+    // tabController.addListener(() {
+    //   if (tabController.index == 0) {
+    //     context.read<TeamsCubit>().getTeams(
+    //           context,
+    //         );
+    //   } else if (tabController.index == 1) {
+    //     context.read<TopScorersCubit>().getTopScorers(context);
+    //   }
+    // });
   }
 
   @override
@@ -458,12 +460,15 @@ class _Teams_ScreenState extends State<Teams_Screen>
                   bottom: TabBar(
                     controller: tabController,
                     tabs: [
-                      Tab(
-                        child: Text(
-                          "Teams",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                      BlocProvider(
+                        create: (context) => TeamsCubit(),
+                        child: Tab(
+                          child: Text(
+                            "Teams",
+                            style: TextStyle(color: Colors.white, fontSize: 16),
+                          ),
+                          //context.read<SubjectBloc>()
                         ),
-                        //context.read<SubjectBloc>()
                       ),
                       Tab(
                         child: Text(

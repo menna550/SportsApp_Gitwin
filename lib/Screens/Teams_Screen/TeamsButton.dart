@@ -103,11 +103,12 @@ class _TeamsButtonState extends State<TeamsButton> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TeamsCubit, TeamsState>(builder: (context, state) {
-      if (state is TeamsInitial) {
-        // Fetch the teams when the tab is first opened
-        context.read<TeamsCubit>().getTeams(context);
-        return Center(child: CircularProgressIndicator());
-      } else if (state is TeamsLoading) {
+      // if (state is TeamsInitial) {
+      //   // Fetch the teams when the tab is first opened
+      //   context.read<TeamsCubit>().getTeams(context ,legaID: state.);
+      //   return Center(child: CircularProgressIndicator());
+      // } else
+      if (state is TeamsLoading) {
         return Center(child: CircularProgressIndicator());
       } else if (state is TeamsSuccess) {
         return Expanded(

@@ -35,8 +35,8 @@ class Lega extends StatelessWidget {
                           onTap: () {
                             context.read<TeamsCubit>().getTeams(
                                   context,
-                                  // legaID: state.response.result![i].leagueKey
-                                  //     .toString()
+                                  legaID: state.response.result![i].leagueKey
+                                      .toString(),
                                 );
                           },
                           child: Column(

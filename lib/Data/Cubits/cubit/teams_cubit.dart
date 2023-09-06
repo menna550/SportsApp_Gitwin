@@ -13,14 +13,11 @@ class TeamsCubit extends Cubit<TeamsState> {
 
   GetTeamsRepo teamsRepo = GetTeamsRepo();
 
-  getTeams(
-    context,
-    /*{required String legaID}*/
-  ) async {
+  getTeams(context, {required String legaID}) async {
     emit(TeamsLoading());
 
     try {
-      await teamsRepo.getTeams(/*legaID*/).then((value) {
+      await teamsRepo.getTeams(legaID).then((value) {
         if (value != null) {
           emit(TeamsSuccess(response: value));
           Navigator.push(
