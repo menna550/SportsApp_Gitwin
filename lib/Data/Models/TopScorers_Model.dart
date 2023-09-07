@@ -5,16 +5,16 @@ class TopScorersData {
   });
   late final int success;
   late final List<Result> result;
-  
-  TopScorersData.fromJson(Map<String, dynamic> json){
+
+  TopScorersData.fromJson(Map<String, dynamic> json) {
     success = json['success'];
-    result = List.from(json['result']).map((e)=>Result.fromJson(e)).toList();
+    result = List.from(json['result']).map((e) => Result.fromJson(e)).toList();
   }
 
   Map<String, dynamic> toJson() {
     final _data = <String, dynamic>{};
     _data['success'] = success;
-    _data['result'] = result.map((e)=>e.toJson()).toList();
+    _data['result'] = result.map((e) => e.toJson()).toList();
     return _data;
   }
 }
@@ -31,22 +31,22 @@ class Result {
     required this.penaltyGoals,
   });
   late final int playerPlace;
-  late final String playerName;
+  late final String? playerName;
   late final int playerKey;
-  late final String teamName;
+  late final String? teamName;
   late final int teamKey;
   late final int goals;
   late final int? assists;
   late final int penaltyGoals;
-  
-  Result.fromJson(Map<String, dynamic> json){
+
+  Result.fromJson(Map<String, dynamic> json) {
     playerPlace = json['player_place'];
     playerName = json['player_name'];
     playerKey = json['player_key'];
     teamName = json['team_name'];
     teamKey = json['team_key'];
     goals = json['goals'];
-    assists = null;
+    assists = json['assists'];
     penaltyGoals = json['penalty_goals'];
   }
 

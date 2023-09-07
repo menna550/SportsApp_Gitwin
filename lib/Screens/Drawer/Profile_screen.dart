@@ -97,12 +97,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                 ],
               ),
-              Text(
-                'My Name',
-                style: TextStyle(color: AppColors.textcolor),
-              ),
+              // Text(
+              //   'My Name',
+              //   style: TextStyle(color: AppColors.textcolor),
+              // ),
               SizedBox(
-                height: 15,
+                height: 35,
               ),
               info2(icon: Icons.person, title: 'Name', describtion: 'My Name'),
               SizedBox(
@@ -123,128 +123,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: 15,
               ),
               info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-              info2(icon: Icons.place, title: 'Address', describtion: 'Egept'),
-
-              // TextFormField(
-              //   style: TextStyle(color: AppColors.textcolor),
-              //   decoration: InputDecoration(
-              //     labelText: 'Email',
-              //     hintText: 'example@gmail.com',
-              //   ),
-              // ),
-              // TextFormField(
-              //   style: TextStyle(color: AppColors.textcolor),
-              //   decoration: InputDecoration(
-              //     labelText: 'User Name',
-              //     hintText: 'mai dkfo',
-              //   ),
-              // ),
             ],
           ),
         ),
       ),
     );
   }
-
-  // Widget myDrawerList() {
-  //   return Padding(
-  //     padding: const EdgeInsets.only(top: 15),
-  //     child: Column(
-  //       children: [
-  //         myDraweritem(
-  //           1,
-  //           'Home',
-  //           Icons.home,
-  //           currentPage == Draweritem.home ? true : false,
-  //         ),
-  //         myDraweritem(
-  //           2,
-  //           'Profile',
-  //           Icons.person,
-  //           currentPage == Draweritem.profile ? true : false,
-  //         ),
-  //         myDraweritem(
-  //           3,
-  //           'Settings',
-  //           Icons.settings,
-  //           currentPage == Draweritem.settings ? true : false,
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
-  // Widget myDraweritem(int id, String name, IconData icon, bool selected) {
-  //   return Material(
-  //     color: selected ? Colors.grey[300] : Colors.transparent,
-  //     child: Column(
-  //       children: [
-  //         InkWell(
-  //           onTap: () {
-  //             Navigator.pop(context);
-  //             setState(() {
-  //               if (id == 1) {
-  //                 currentPage = Draweritem.home;
-  //                 Navigator.push(
-  //                   context,
-  //                   MaterialPageRoute<void>(
-  //                     builder: (BuildContext context) => home_screen(),
-  //                   ),
-  //                 );
-  //               } else if (id == 2) {
-  //                 currentPage = Draweritem.profile;
-  //                 Navigator.push(
-  //                   context,
-  //                   MaterialPageRoute<void>(
-  //                     builder: (BuildContext context) => ProfileScreen(),
-  //                   ),
-  //                 );
-  //               } else if (id == 3) {
-  //                 currentPage = Draweritem.settings;
-  //                 Navigator.push(
-  //                   context,
-  //                   MaterialPageRoute<void>(
-  //                     builder: (BuildContext context) => SettingsScreen(),
-  //                   ),
-  //                 );
-  //               }
-  //             });
-  //           },
-  //           child: Padding(
-  //             padding: const EdgeInsets.all(15.0),
-  //             child: Row(
-  //               children: [
-  //                 Icon(
-  //                   icon,
-  //                   color: AppColors.primaryColor,
-  //                 ),
-  //                 SizedBox(
-  //                   width: 15,
-  //                 ),
-  //                 Text(
-  //                   name,
-  //                   style: TextStyle(
-  //                       fontSize: AppFonts.fontsize16,
-  //                       fontWeight: AppFonts.fontWeight400),
-  //                 ),
-  //               ],
-  //             ),
-  //           ),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  // }
 }
 
 // enum Draweritem {
