@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
+import 'package:sports_app/Screens/Players_Screen/test.dart';
 import 'package:sports_app/Shared/Colors.dart';
 //import 'package:sports_app/Shared/Drawer_List.dart';
 import 'package:sports_app/Shared/Fonts.dart';
@@ -33,34 +34,43 @@ class _PlayersScreenState extends State<PlayersScreen> {
           iconTheme: IconThemeData(color: AppColors.textcolor),
           backgroundColor: AppColors.primaryColor,
           elevation: 0,
-          title: TextField(
-            style: TextStyle(color: AppColors.textcolor),
-            decoration: InputDecoration(
-                hintText: 'Search about player..',
-                hintStyle: TextStyle(color: AppColors.textcolor),
-                // fillColor: Colors.white,
-                // filled: true,
-                constraints: BoxConstraints(
-                  maxWidth: MediaQuery.of(context).size.width * 0.80,
-                  maxHeight: MediaQuery.of(context).size.width * 0.095,
-                ),
-                contentPadding: const EdgeInsets.all(12),
-                suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.search,
-                      color: AppColors.textcolor,
-                      size: 20,
-                    )),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: AppColors.secondaryColor,
-                  ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(50),
-                  ),
-                )),
-          ),
+          // title:
+          // TextField(
+          //   style: TextStyle(color: AppColors.textcolor),
+          //   decoration: InputDecoration(
+          //       hintText: 'Search about player..',
+          //       hintStyle: TextStyle(color: AppColors.textcolor),
+          //       // fillColor: Colors.white,
+          //       // filled: true,
+          //       constraints: BoxConstraints(
+          //         maxWidth: MediaQuery.of(context).size.width * 0.80,
+          //         maxHeight: MediaQuery.of(context).size.width * 0.095,
+          //       ),
+          //       contentPadding: const EdgeInsets.all(12),
+          //       suffixIcon: IconButton(
+          //           onPressed: () {},
+          //           icon: Icon(
+          //             Icons.search,
+          //             color: AppColors.textcolor,
+          //             size: 20,
+          //           )),
+          //       enabledBorder: OutlineInputBorder(
+          //         borderSide: BorderSide(
+          //           color: AppColors.secondaryColor,
+          //         ),
+          //         borderRadius: const BorderRadius.all(
+          //           Radius.circular(50),
+          //         ),
+          //       )),
+          // ),
+
+          actions: [
+            IconButton(
+                onPressed: () {
+                  //showSearch(context: context, delegate: Scarch());
+                },
+                icon: Icon(Icons.search)),
+          ],
         ),
         drawer: Drawer(
             backgroundColor: AppColors.textcolor,
@@ -270,7 +280,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                         .response
                                                         .result![index]
                                                         .playerType ??
-                                                    "n"),
+                                                    "pp"),
                                             const SizedBox(
                                               height: 15,
                                             ),
@@ -290,7 +300,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                                             .response
                                                             .result![index]
                                                             .playerName ??
-                                                        "n";
+                                                        "0";
                                                     String playerNumber = state
                                                             .response
                                                             .result![index]
@@ -348,7 +358,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                           Text(
                                             state.response.result![index]
                                                     .playerName ??
-                                                "n",
+                                                "",
                                             style: TextStyle(
                                                 fontSize: AppFonts.fontsize16,
                                                 fontWeight: FontWeight.w600,
@@ -357,7 +367,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
                                           Text(
                                               state.response.result![index]
                                                       .playerType ??
-                                                  "n",
+                                                  "",
                                               style: TextStyle(
                                                   fontSize: AppFonts.fontsize12,
                                                   color: AppColors.textcolor)),

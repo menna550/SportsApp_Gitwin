@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
@@ -15,16 +13,16 @@ class GetLegaCubit extends Cubit<GetLegaState> {
   GetLegaCubit() : super(GetLegaInitial());
   GetLegaRepo legaRepo = GetLegaRepo();
 
-  getLega(context) async {
+  getLega(context, {required String countryID}) async {
     emit(GetLegaLoading());
 
     try {
-      await legaRepo.getLega().then((value) {
+      await legaRepo.getLega(countryID).then((value) {
         if (value != null) {
           emit(GetLegaSuccess(response: value));
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Countries_Screen()),
+            MaterialPageRoute(builder: (context) => Lega()),
           );
         } else {
           emit(GetLegaError());

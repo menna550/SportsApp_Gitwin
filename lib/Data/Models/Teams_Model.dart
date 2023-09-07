@@ -5,16 +5,16 @@ class TeamsData {
   });
   late final int success;
   late final List<Result> result;
-  
-  TeamsData.fromJson(Map<String, dynamic> json){
+
+  TeamsData.fromJson(Map<String?, dynamic> json) {
     success = json['success'];
-    result = List.from(json['result']).map((e)=>Result.fromJson(e)).toList();
+    result = List.from(json['result']).map((e) => Result.fromJson(e)).toList();
   }
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
+  Map<String?, dynamic> toJson() {
+    final _data = <String?, dynamic>{};
     _data['success'] = success;
-    _data['result'] = result.map((e)=>e.toJson()).toList();
+    _data['result'] = result.map((e) => e.toJson()).toList();
     return _data;
   }
 }
@@ -27,27 +27,29 @@ class Result {
     required this.players,
     required this.coaches,
   });
-  late final int teamKey;
-  late final String teamName;
-  late final String teamLogo;
+  late final int? teamKey;
+  late final String? teamName;
+  late final String? teamLogo;
   late final List<Players> players;
   late final List<Coaches> coaches;
-  
-  Result.fromJson(Map<String, dynamic> json){
+
+  Result.fromJson(Map<String, dynamic> json) {
     teamKey = json['team_key'];
     teamName = json['team_name'];
     teamLogo = json['team_logo'];
-    players = List.from(json['players']).map((e)=>Players.fromJson(e)).toList();
-    coaches = List.from(json['coaches']).map((e)=>Coaches.fromJson(e)).toList();
+    players =
+        List.from(json['players']).map((e) => Players.fromJson(e)).toList();
+    coaches =
+        List.from(json['coaches']).map((e) => Coaches.fromJson(e)).toList();
   }
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
+  Map<String?, dynamic> toJson() {
+    final _data = <String?, dynamic>{};
     _data['team_key'] = teamKey;
     _data['team_name'] = teamName;
     _data['team_logo'] = teamLogo;
-    _data['players'] = players.map((e)=>e.toJson()).toList();
-    _data['coaches'] = coaches.map((e)=>e.toJson()).toList();
+    _data['players'] = players.map((e) => e.toJson()).toList();
+    _data['coaches'] = coaches.map((e) => e.toJson()).toList();
     return _data;
   }
 }
@@ -97,48 +99,48 @@ class Players {
     required this.playerRating,
   });
   late final int playerKey;
-  late final String playerImage;
-  late final String playerName;
-  late final String playerNumber;
-  late final Null playerCountry;
-  late final String playerType;
-  late final String playerAge;
-  late final String playerMatchPlayed;
-  late final String playerGoals;
-  late final String playerYellowCards;
-  late final String playerRedCards;
-  late final String playerInjured;
-  late final String playerSubstituteOut;
-  late final String playerSubstitutesOnBench;
-  late final String playerAssists;
-  late final String playerBirthdate;
-  late final String playerIsCaptain;
-  late final String playerShotsTotal;
-  late final String playerGoalsConceded;
-  late final String playerFoulsCommitted;
-  late final String playerTackles;
-  late final String playerBlocks;
-  late final String playerCrossesTotal;
-  late final String playerInterceptions;
-  late final String playerClearances;
-  late final String playerDispossesed;
-  late final String playerSaves;
-  late final String playerInsideBoxSaves;
-  late final String playerDuelsTotal;
-  late final String playerDuelsWon;
-  late final String playerDribbleAttempts;
-  late final String playerDribbleSucc;
-  late final String playerPenComm;
-  late final String playerPenWon;
-  late final String playerPenScored;
-  late final String playerPenMissed;
-  late final String playerPasses;
-  late final String playerPassesAccuracy;
-  late final String playerKeyPasses;
-  late final String playerWoordworks;
-  late final String playerRating;
-  
-  Players.fromJson(Map<String, dynamic> json){
+  late final String? playerImage;
+  late final String? playerName;
+  late final String? playerNumber;
+  late final playerCountry;
+  late final String? playerType;
+  late final String? playerAge;
+  late final String? playerMatchPlayed;
+  late final String? playerGoals;
+  late final String? playerYellowCards;
+  late final String? playerRedCards;
+  late final String? playerInjured;
+  late final String? playerSubstituteOut;
+  late final String? playerSubstitutesOnBench;
+  late final String? playerAssists;
+  late final String? playerBirthdate;
+  late final String? playerIsCaptain;
+  late final String? playerShotsTotal;
+  late final String? playerGoalsConceded;
+  late final String? playerFoulsCommitted;
+  late final String? playerTackles;
+  late final String? playerBlocks;
+  late final String? playerCrossesTotal;
+  late final String? playerInterceptions;
+  late final String? playerClearances;
+  late final String? playerDispossesed;
+  late final String? playerSaves;
+  late final String? playerInsideBoxSaves;
+  late final String? playerDuelsTotal;
+  late final String? playerDuelsWon;
+  late final String? playerDribbleAttempts;
+  late final String? playerDribbleSucc;
+  late final String? playerPenComm;
+  late final String? playerPenWon;
+  late final String? playerPenScored;
+  late final String? playerPenMissed;
+  late final String? playerPasses;
+  late final String? playerPassesAccuracy;
+  late final String? playerKeyPasses;
+  late final String? playerWoordworks;
+  late final String? playerRating;
+
+  Players.fromJson(Map<String?, dynamic> json) {
     playerKey = json['player_key'];
     playerImage = json['player_image'];
     playerName = json['player_name'];
@@ -182,8 +184,8 @@ class Players {
     playerRating = json['player_rating'];
   }
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
+  Map<String?, dynamic> toJson() {
+    final _data = <String?, dynamic>{};
     _data['player_key'] = playerKey;
     _data['player_image'] = playerImage;
     _data['player_name'] = playerName;
@@ -235,18 +237,18 @@ class Coaches {
     this.coachCountry,
     this.coachAge,
   });
-  late final String coachName;
-  late final Null coachCountry;
-  late final Null coachAge;
-  
-  Coaches.fromJson(Map<String, dynamic> json){
+  late final String? coachName;
+  late final coachCountry;
+  late final coachAge;
+
+  Coaches.fromJson(Map<String?, dynamic> json) {
     coachName = json['coach_name'];
     coachCountry = null;
     coachAge = null;
   }
 
-  Map<String, dynamic> toJson() {
-    final _data = <String, dynamic>{};
+  Map<String?, dynamic> toJson() {
+    final _data = <String?, dynamic>{};
     _data['coach_name'] = coachName;
     _data['coach_country'] = coachCountry;
     _data['coach_age'] = coachAge;
