@@ -7,27 +7,23 @@ import 'package:my_verifications/Screens/register_screen.dart';
 import 'package:my_verifications/provider/auth_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
-import 'package:safetynet_attestation/safetynet_attestation.dart';
+// import 'package:safetynet_attestation/safetynet_attestation.dart';
 
-void main() async
-{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseAppCheck.instance.activate();
 
   runApp(const MyApp());
-
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_)=>AuthProvider())
-      ],
+      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: RegisterScreen(),
@@ -35,4 +31,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
