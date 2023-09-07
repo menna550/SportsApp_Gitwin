@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sports_app/Screens/Home_Screen.dart';
 import 'package:sports_app/Screens/OnBoardingScreen/Frist_Page.dart';
 import 'package:sports_app/Screens/OnBoardingScreen/Third_Page.dart';
+import 'package:sports_app/Screens/Register_Screen.dart';
 import 'package:sports_app/Shared/Colors.dart';
 
 import 'Second_Page.dart';
@@ -88,10 +90,14 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 const Spacer(),
                 TextButton(
                   onPressed: () {
+                    // Set isFirstRun to false so that the onboarding screen will not be shown again
+                    SharedPreferences.getInstance().then((prefs) {
+                      prefs.setBool('isFirstRun', false);
+                    });
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute<void>(
-                        builder: (BuildContext context) => home_screen(),
+                        builder: (BuildContext context) => RegisterScreen(),
                       ),
                     );
                   },

@@ -116,7 +116,7 @@ class _TopScorersButtonsState extends State<TopScorersButtons> {
                       color: AppColors.secondaryColor),
                   child: ListTile(
                     title: Text(
-                      state.response.result[index].playerName,
+                      state.response.result[index].playerName ?? "",
                       style: TextStyle(color: Colors.white),
                     ),
                     subtitle: Text(

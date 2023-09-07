@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sports_app/Screens/OnBoardingScreen/On_Boarding_Screen.dart';
 import 'package:sports_app/Shared/Colors.dart';
-
 
 import '../Shared/Drawer_List.dart';
 import '../Shared/Drawer_header.dart';
 
 import '../Data/Cubits/Countries_cubit/countries_cubit.dart';
-
 
 class home_screen extends StatelessWidget {
   home_screen({super.key});
@@ -31,6 +30,18 @@ class home_screen extends StatelessWidget {
             iconTheme: IconThemeData(color: AppColors.textcolor),
             backgroundColor: AppColors.primaryColor,
             elevation: 0,
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (BuildContext context) => OnBoardingScreen(),
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.abc))
+            ],
           ),
           drawer: Drawer(
               backgroundColor: AppColors.textcolor,

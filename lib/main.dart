@@ -11,23 +11,24 @@ import 'package:sports_app/Screens/OnBoardingScreen/On_Boarding_Screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sports_app/Screens/Players_Screen/players.dart';
 import 'package:sports_app/Screens/Players_Screen/test.dart';
+import 'package:sports_app/Screens/Register_Screen.dart';
+import 'package:sports_app/Screens/Splash_Screen.dart';
 import 'package:sports_app/Screens/Teams_Screen/Teams_Screen.dart';
+import 'package:sports_app/Screens/Teams_Screen/try.dart';
 
 import 'Data/Cubits/Lega_cubit/get_lega_cubit.dart';
 import 'Data/Cubits/Players_cubit/players_cubit.dart';
 //import 'Data/Cubits/Teams_Cubit/teams_cubit.dart';
 import 'Data/Cubits/cubit/teams_cubit.dart';
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final prefs = await SharedPreferences.getInstance();
-  final showHome = prefs.getBool('showHome') ?? false;
-  runApp(MyApp(showHome: showHome));
+void main() {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final bool showHome;
-  const MyApp({Key? key, required this.showHome}) : super(key: key);
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
 
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -53,12 +54,12 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Sports App',
+        title: 'Sport Time',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: home_screen(),
+        home: SplashScreen(),
       ),
     );
   }

@@ -138,13 +138,15 @@ class _TeamsButtonState extends State<TeamsButton> {
                         child: Row(
                           // mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.network(state.response.result[i].teamLogo,
-                                width: 50, height: 50),
+                            Image.network(
+                                state.response.result[i].teamLogo ?? "",
+                                width: 50,
+                                height: 50),
                             const SizedBox(
                               width: 10,
                             ),
                             Text(
-                              state.response.result[i].teamName,
+                              state.response.result[i].teamName ?? "",
                               style: const TextStyle(
                                   color: Colors.white, fontSize: 20),
                             )

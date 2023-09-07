@@ -13,20 +13,17 @@ class TopScorersCubit extends Cubit<TopScorersState> {
 
   GetTopScorersRepo TopScorersRepo = GetTopScorersRepo();
 
-  getTopScorers(
-    context,
-    /*{required String legaID}*/
-  ) async {
+  getTopScorers(context, {required String legaID}) async {
     emit(TopScorersLoading());
 
     try {
-      await TopScorersRepo.getTopScorers(/*legaID*/).then((value) {
+      await TopScorersRepo.getTopScorers(legaID).then((value) {
         if (value != null) {
           emit(TopScorersSuccess(response: value));
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => Teams_Screen()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Teams_Screen()),
+          );
         } else {
           emit(TopScorersError());
         }
